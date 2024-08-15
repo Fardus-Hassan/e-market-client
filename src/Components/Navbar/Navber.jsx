@@ -5,7 +5,7 @@ const Navber = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-      <nav className="relative bg-white shadow">
+      <nav className="relative shadow">
         <div className="container px-6 py-3 mx-auto md:flex justify-between">
           <div className="flex items-center justify-between">
             <a href="#">
@@ -49,7 +49,7 @@ const Navber = () => {
   
           {/* Mobile Menu open: "block", Menu closed: "hidden" */}
           <div
-            className={`absolute inset-x-0 z-20 px-6 py-4 transition-all duration-300 ease-in-out bg-white md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between ${
+            className={`absolute inset-x-0 bg-[#ecf0f1] z-20 px-6 py-4 transition-all duration-300 ease-in-out md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between ${
               isOpen ? 'translate-x-0 opacity-100' : 'opacity-0 -translate-x-full'
             }`}
           >
@@ -76,7 +76,7 @@ const Navber = () => {
   
             <div className="relative mt-4 md:mt-0">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                <svg className="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
                     stroke="currentColor"
@@ -89,7 +89,7 @@ const Navber = () => {
   
               <input
                 type="text"
-                className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+                className="w-full py-2 pl-10 pr-4 text-black bg-[#ecf0f1] border border-pmColor rounded-lg focus:border-pmColor focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-pmColor"
                 placeholder="Search"
               />
             </div>
