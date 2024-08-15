@@ -5,7 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors : {
+        pmColor : "#c44569",
+        secColor : "#cf6a87"
+      },
+      fontFamily : {
+        amsterdam : ["New Amsterdam", "sans-serif"]
+      },
+      screens: {
+        'xs': {'max': '320px'},
+      },
+    },
   },
   plugins: [],
 }
+

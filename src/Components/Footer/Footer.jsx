@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from '../Logo/Logo';
 
 const Footer = () => {
     return (
@@ -7,13 +8,9 @@ const Footer = () => {
                 <div className="lg:flex">
                     <div className="w-full -mx-6 lg:w-2/5">
                         <div className="px-6">
-                            <a href="#">
-                                <img
-                                    className="w-auto h-7"
-                                    src="https://merakiui.com/images/full-logo.svg"
-                                    alt=""
-                                />
-                            </a>
+                            <div className='flex'>
+                               <Logo></Logo>
+                            </div>
 
                             <p className="max-w-sm mt-2 text-gray-500">
                                 Join 31,000+ others and never miss out on new tips, tutorials, and
@@ -127,7 +124,7 @@ const Footer = () => {
 
                 <div>
                     <p className="text-center text-gray-600">
-                        © Meraki UI 2023 - All rights reserved
+                        © E-Market UI 2024 - All rights reserved
                     </p>
                 </div>
             </div>

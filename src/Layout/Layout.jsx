@@ -5,9 +5,11 @@ import Footer from '../Components/Footer/Footer';
 
 const Layout = () => {
     return (
-        <div className=''>
+        <div className='font-amsterdam'>
             <Navber></Navber>
-            <Outlet></Outlet>
+            <div className='lg:min-h-[calc(100vh-373px)] min-h-[calc(100vh-88px)]'>
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );
