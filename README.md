@@ -18,4 +18,4 @@ git clone https://github.com/Fardus-Hassan/e-market-client.git
 
 ## Server Site Repo
 
- You can view the Server Site here: [E-Market-server](https://github.com/Fardus-Hassan/e-market-server)
+ You can view the Server Site here: [e-market-server](https://github.com/Fardus-Hassan/e-market-server)
