@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import axios from 'axios';
 import { GlobalStateContext } from '../../Global/GlobalContext';
+import Spinner from '../Spinner/Spinner';
 
 const Home = () => {
 
@@ -45,11 +46,11 @@ const Home = () => {
 
 
     if (loading) {
-        return <h1>Loading...</h1>
+        return <Spinner></Spinner>
     }
 
     return (
-        <div className='lg:mb-[120px] mt-10 mb-[80px] mx-auto max-w-[1440px] w-[95%]'>
+        <div className='lg:mb-[100px] mt-10 mb-[80px] mx-auto max-w-[1440px] w-[95%]'>
             <div className='grid lg:grid-cols-3 gap-5 md:grid-cols-2'>
                 {datas.length > 0 ? (
                     datas.map((product) => (

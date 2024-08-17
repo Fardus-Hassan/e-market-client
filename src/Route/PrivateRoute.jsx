@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { GlobalStateContext } from "../Global/GlobalContext";
+import Spinner from "../Components/Spinner/Spinner";
 
 
 
@@ -12,7 +13,7 @@ const PrivateRoute = ({ children }) => {
     console.log(user);
 
      if (loading) {
-        return <h1>Loading...</h1>
+        return <Spinner></Spinner>
     }
     else if (user) {
         return children
