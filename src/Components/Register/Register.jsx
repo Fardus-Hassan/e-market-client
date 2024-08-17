@@ -34,7 +34,7 @@ const Register = () => {
                 navigate(form);
             }
         }).catch(error => {
-            console.log(error);
+            console.log(error)
         })
     }
 
