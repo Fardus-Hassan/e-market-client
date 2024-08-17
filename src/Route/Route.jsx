@@ -5,6 +5,7 @@ import Layout from "../Layout/Layout";
 import Home from "../Components/Pages/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const Route = createBrowserRouter([
     {
@@ -14,7 +15,7 @@ const Route = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home></Home>,
+                element: <PrivateRoute><Home></Home></PrivateRoute>,
             },
 
         ],

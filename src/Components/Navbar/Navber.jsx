@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Logo from '../Logo/Logo';
+import { GlobalStateContext } from '../../Global/GlobalContext';
 
 const Navber = () => {
+  const { user, logout, handleSearch} = useContext(GlobalStateContext)
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -93,6 +95,7 @@ const Navber = () => {
                 placeholder="Search"
               />
             </div>
+              <button onClick={()=>logout()} className='py-2 px-5 ml-5 bg-secColor text-white rounded-lg hover:bg-pmColor duration-300'>Logout</button>
           </div>
         </div>
       </nav>
