@@ -8,7 +8,7 @@ const Navber = () => {
 
     return (
       <nav className="relative shadow">
-        <div className="container px-6 py-3 mx-auto md:flex justify-between">
+        <div className="py-3 mx-auto md:flex justify-between">
           <div className="flex items-center justify-between">
             <a href="#">
               <Logo></Logo>
@@ -56,7 +56,7 @@ const Navber = () => {
             }`}
           >
             <div className="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
-              <a
+              {/* <a
                 href="#"
                 className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2"
               >
@@ -73,7 +73,7 @@ const Navber = () => {
                 className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2"
               >
                 Contact
-              </a>
+              </a> */}
             </div>
   
             <div className="relative mt-4 md:mt-0">
