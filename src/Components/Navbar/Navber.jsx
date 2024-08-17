@@ -8,14 +8,14 @@ const Navber = () => {
 
     return (
       <nav className="relative shadow">
-        <div className="py-3 mx-auto md:flex justify-between">
+        <div className="py-3 sm:flex justify-between mx-auto max-w-[1440px] w-[95%]">
           <div className="flex items-center justify-between">
             <a href="#">
               <Logo></Logo>
             </a>
   
             {/* Mobile menu button */}
-            <div className="flex lg:hidden">
+            <div className="flex sm:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
@@ -51,11 +51,11 @@ const Navber = () => {
   
           {/* Mobile Menu open: "block", Menu closed: "hidden" */}
           <div
-            className={`absolute inset-x-0 bg-[#ecf0f1] z-20 px-6 py-4 transition-all duration-300 ease-in-out md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between ${
+            className={`absolute inset-x-0 bg-[#ecf0f1] z-20 px-6 py-4 transition-all duration-300 ease-in-out sm:mt-0 sm:p-0 sm:top-0 sm:relative sm:opacity-100 sm:translate-x-0 sm:flex sm:items-center sm:justify-between ${
               isOpen ? 'translate-x-0 opacity-100' : 'opacity-0 -translate-x-full'
             }`}
           >
-            <div className="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
+            <div className="flex flex-col px-2 -mx-4 sm:flex-row md:mx-10 md:py-0">
               {/* <a
                 href="#"
                 className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2"
@@ -76,7 +76,7 @@ const Navber = () => {
               </a> */}
             </div>
   
-            <div className="relative mt-4 md:mt-0">
+            <div className="relative mt-4 sm:mt-0">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg className="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none">
                   <path
@@ -95,7 +95,7 @@ const Navber = () => {
                 placeholder="Search"
               />
             </div>
-              <button onClick={()=>logout()} className='py-2 px-5 ml-5 bg-secColor text-white rounded-lg hover:bg-pmColor duration-300'>Logout</button>
+              <button onClick={()=>logout()} className='py-2 px-5 sm:ml-5 sm:mt-0 mt-5 sm:mx-0 mx-auto block bg-secColor text-white rounded-lg hover:bg-pmColor duration-300'>Logout</button>
           </div>
         </div>
       </nav>

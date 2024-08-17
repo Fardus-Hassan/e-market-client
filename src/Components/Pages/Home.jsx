@@ -17,12 +17,12 @@ const Home = () => {
     console.log(products);
 
     return (
-        <div className='lg:mb-[120px] mt-10 mb-[80px]'>
+        <div className='lg:mb-[120px] mt-10 mb-[80px] mx-auto max-w-[1440px] w-[95%]'>
             <div className='grid lg:grid-cols-3 gap-5 md:grid-cols-2'>
                 {
-                    products.map(product => (
+                    products.length > 0 ? products.map(product => (
                         <ProductCard key={product._id} product={product} />
-                    ))
+                    )) : <h1>Loading...</h1>
                 }
             </div>
         </div>

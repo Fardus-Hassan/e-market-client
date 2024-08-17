@@ -5,7 +5,7 @@ const ProductCard = ({product}) => {
     const {name, price, brand, category, image} = product;
 
     return (
-        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+        <div className="flex flex-col items-center justify-center w-full  mx-auto">
             <div
                 className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
                 style={{
@@ -22,9 +22,9 @@ const ProductCard = ({product}) => {
                 <div className="flex items-center justify-between px-3 py-2 bg-gray-200">
                     <span className="font-bold text-gray-800">${price}</span>
                     <span className="font-bold text-secColor">#{brand}</span>
-                    <button className="px-2 py-1 text-xs text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 focus:bg-gray-700 focus:outline-none">
+                    <span className="px-2 py-1 text-xs text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 focus:bg-gray-700 focus:outline-none">
                         {category}
-                    </button>
+                    </span>
                 </div>
             </div>
         </div>
