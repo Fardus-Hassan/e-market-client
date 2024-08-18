@@ -79,7 +79,7 @@ const Register = () => {
 
 
     return (
-        <div className='flex flex-col justify-center items-center h-screen'>
+        <div className='flex flex-col justify-center items-center h-screen font-amsterdam'>
             <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white bg-opacity-50 rounded-lg shadow-md">
                 <div className="flex justify-center mx-auto">
                     <Logo />

@@ -6,6 +6,11 @@ const Navber = () => {
   const { user, logout, handleSearch} = useContext(GlobalStateContext)
     const [isOpen, setIsOpen] = useState(false);
 
+    const handleSubmit = (e) => {
+      handleSearch(e.target.value);
+      console.log(e.target.value);
+  }
+
     return (
       <nav className="relative shadow">
         <div className="py-3 sm:flex justify-between mx-auto max-w-[1440px] w-[95%]">
@@ -90,7 +95,7 @@ const Navber = () => {
               </span>
   
               <input
-                type="text"
+                type="text" name='search' onChange={handleSubmit} 
                 className="w-full py-2 pl-10 pr-4 text-black bg-[#ecf0f1] border border-pmColor rounded-lg focus:border-pmColor focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-pmColor"
                 placeholder="Search"
               />

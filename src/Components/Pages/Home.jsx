@@ -9,7 +9,7 @@ const Home = () => {
     const [loading, setLoading] = useState(true)
 
     const [datas, setDatas] = useState([])
-    const { searchData } = useContext(GlobalStateContext)
+    const { searchData, searchLength } = useContext(GlobalStateContext)
     const [filterData, setFilterData] = useState([])
 
 
@@ -17,7 +17,7 @@ const Home = () => {
     const [itemPerPage, setItemPerPage] = useState(6)
     const [currentPage, setCurrentPage] = useState(0)
     const totalPage = Math.ceil(total / itemPerPage)
-    const pages = [...Array(totalPage).keys()]
+    let pages = [...Array(totalPage).keys()]
 
 
 
@@ -41,7 +41,9 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
-        setFilterData(searchData)
+        setDatas(searchData)
+        // setTotal(searchData);
+        // pages = searchData
     }, [searchData])
 
 
@@ -49,24 +51,29 @@ const Home = () => {
         return <Spinner></Spinner>
     }
 
+
+
+
     return (
-        <div className='lg:mb-[100px] mt-10 mb-[80px] mx-auto max-w-[1440px] w-[95%]'>
-            <div className='grid lg:grid-cols-3 gap-5 md:grid-cols-2'>
-                {datas.length > 0 ? (
-                    datas.map((product) => (
-                        <ProductCard key={product._id} product={product} />
-                    ))
-                ) : (
-                    <h1>Loading...</h1>
-                )}
-            </div>
-            <div className="flex justify-center pt-10">
+        <div className='lg:mb-[100px] sm:mt-10 mt-5 mb-[80px] mx-auto max-w-[1440px] w-[95%]'>
+            {datas.length > 0 ? (
+                <div className='grid lg:grid-cols-3 gap-5 md:grid-cols-2'>
+                    {
+                        datas.map((product) => (
+                            <ProductCard key={product._id} product={product} />
+                        ))
+                    }
+                </div>
+            ) : (
+                <h1 className='text-5xl text-center'>No Products Found</h1>
+            )}
+            <div className={`flex justify-center pt-10 `}>
                 <button
                     disabled={currentPage === 0}
                     onClick={() => setCurrentPage(currentPage - 1)}
                     className={`${currentPage === 0
-                            ? "text-gray-200 flex items-center justify-center px-4 py-2 mx-1 transition-colors duration-300 transform bg-white rounded-md hover:cursor-not-allowed border shadow-md"
-                            : "flex items-center justify-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md hover:bg-pmColor hover:text-white border shadow-md"
+                        ? "text-gray-200 flex items-center justify-center px-4 py-2 mx-1 transition-colors duration-300 transform bg-white rounded-md hover:cursor-not-allowed border shadow-md"
+                        : "flex items-center justify-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md hover:bg-pmColor hover:text-white border shadow-md"
                         }`}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
@@ -84,8 +91,8 @@ const Home = () => {
                             onClick={() => setCurrentPage(i)}
                             key={i}
                             className={`px-4 ${currentPage === i
-                                    ? "bg-pmColor py-2 mx-1 transition-colors hover:text-white duration-300 transform rounded-md text-white hover:bg-pmColor border shadow-md"
-                                    : "py-2 mx-1 transition-colors bg-white hover:text-white text-black duration-300 transform rounded-md hover:bg-pmColor border shadow-md"
+                                ? "bg-pmColor py-2 mx-1 transition-colors hover:text-white duration-300 transform rounded-md text-white hover:bg-pmColor border shadow-md"
+                                : "py-2 mx-1 transition-colors bg-white hover:text-white text-black duration-300 transform rounded-md hover:bg-pmColor border shadow-md"
                                 }`}
                         >
                             {item + 1}
@@ -97,8 +104,8 @@ const Home = () => {
                     disabled={currentPage === Math.ceil(total / itemPerPage) - 1}
                     onClick={() => setCurrentPage(currentPage + 1)}
                     className={`${currentPage === Math.ceil(total / itemPerPage) - 1
-                            ? "text-gray-200 flex items-center justify-center px-4 py-2 mx-1 transition-colors duration-300 transform bg-white rounded-md hover:cursor-not-allowed border shadow-md"
-                            : "flex items-center justify-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md hover:bg-pmColor hover:text-white border shadow-md"
+                        ? "text-gray-200 flex items-center justify-center px-4 py-2 mx-1 transition-colors duration-300 transform bg-white rounded-md hover:cursor-not-allowed border shadow-md"
+                        : "flex items-center justify-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md hover:bg-pmColor hover:text-white border shadow-md"
                         }`}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
@@ -110,6 +117,7 @@ const Home = () => {
                     </svg>
                 </button>
             </div>
+
         </div>
     );
 

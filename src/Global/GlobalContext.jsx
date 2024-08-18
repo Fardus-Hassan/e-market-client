@@ -15,6 +15,7 @@ const GlobalContext = ({ children }) => {
     const [searchData, setSearchData] = useState([])
     const [open, setOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [searchLength, setSearchLength] = useState(0);
 
     // AuthContext ---------------------------------------------------------------------------------------------------
     const [user, setUser] = useState(null);
@@ -94,14 +95,15 @@ const GlobalContext = ({ children }) => {
 
 
     const handleSearch = async (value) => {
-        const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/events/search/event?search=${value}`)
+        const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/products/search/product?search=${value}`)
         setSearchData(data);
+        setSearchLength(value.length);
     }
 
 
     return (
 
-        <GlobalStateContext.Provider value={{ user, searchData, open, isOpen, setIsOpen, setOpen, handleSearch, setLoading, register, login, logout, setUser, updateUserProfile, loading, }}>
+        <GlobalStateContext.Provider value={{ user, searchData, searchLength, open, isOpen, setIsOpen, setOpen, handleSearch, setLoading, register, login, logout, setUser, updateUserProfile, loading, }}>
             {children}
         </GlobalStateContext.Provider>
 

@@ -19,7 +19,7 @@ const ProductCard = ({product}) => {
                     {name}
                 </h3>
 
-                <div className="flex items-center justify-between px-3 py-2 bg-secColor bg-opacity-20">
+                <div className="flex items-center justify-between px-3 py-2 bg-pmColor bg-opacity-20">
                     <span className="font-bold text-gray-800">${price}</span>
                     <span className="font-bold text-pmColor">#{brand}</span>
                     <span className="px-2 py-1 text-xs text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 focus:bg-gray-700 focus:outline-none">
